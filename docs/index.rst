@@ -177,6 +177,17 @@ MongoDB-style dotted expressions.
    :members:
 
 
+
+Troubleshooting
+---------------
+
+If you have problem like ``TypeError: argument must be an int, or have a fileno() method`` you should run uwsgi with the ``--wsgi-disable-file-wrapper`` flag or add the following entry in your **uwsgi.ini** file:
+
+.. code-block:: bash
+
+    wsgi-disable-file-wrapper = true
+
+
 History and Contributors
 ------------------------
 
