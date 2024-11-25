@@ -168,6 +168,7 @@ class PyMongo(object):
             mimetype=fileobj.content_type,
             direct_passthrough=True,
         )
+        response.headers['Content-Disposition'] = 'attachment; filename={}'.format(filename)
         response.content_length = fileobj.length
         response.last_modified = fileobj.upload_date
         response.set_etag(fileobj.md5)
