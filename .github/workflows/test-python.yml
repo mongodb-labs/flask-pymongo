@@ -31,7 +31,7 @@ jobs:
       with:
         enable-cache: true
         python-version: ${{ matrix.python-version }}
-    - uses: extractions/setup-just@v2
+    - uses: extractions/setup-just@v3
     - run: just install
     - run: just lint
     - run: just docs
@@ -54,7 +54,7 @@ jobs:
         with:
           enable-cache: true
           python-version: ${{ matrix.python-version }}
-      - uses: extractions/setup-just@v2
+      - uses: extractions/setup-just@v3
       - name: Start MongoDB on Linux
         if: ${{ startsWith(runner.os, 'Linux') }}
         uses: supercharge/mongodb-github-action@1.12.0
@@ -90,13 +90,13 @@ jobs:
       with:
         enable-cache: true
         python-version: ${{ env.MIN_PYTHON }}
-    - uses: extractions/setup-just@v2
+    - uses: extractions/setup-just@v3
     - name: Install uv
       uses: astral-sh/setup-uv@v5
       with:
         enable-cache: true
         python-version: ${{ env.MIN_PYTHON }}
-    - uses: extractions/setup-just@v2
+    - uses: extractions/setup-just@v3
     - uses: supercharge/mongodb-github-action@1.12.0
       with:
         mongodb-version: ${{ env.MIN_MONGODB }}
