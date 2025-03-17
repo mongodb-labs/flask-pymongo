@@ -114,7 +114,7 @@ constructor. These are passed directly through to the underlying
     By default, Flask-PyMongo sets the ``connect`` keyword argument to
     ``False``, to prevent PyMongo from connecting immediately. PyMongo
     itself `is not fork-safe
-    <https://www.mongodb.com/docs/languages/python/pymongo-driver/current/faq/#is-pymongo-fork-safe->`_,
+    <https://www.mongodb.com/docs/languages/python/pymongo-driver/current/connect/mongoclient/#forking-a-process-causes-a-deadlock>`_,
     and delaying connection until the app is actually used is necessary to
     avoid issues. If you wish to change this default behavior, pass
     ``connect=True`` as a keyword argument to ``PyMongo``.
