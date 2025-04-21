@@ -22,7 +22,7 @@ env:
   FOLLOWING_VERSION: ${{ inputs.following_version || '' }}
 
 concurrency:
-  group: wheels-${{ github.ref }}
+  group: dist-${{ github.ref }}
   cancel-in-progress: true
 
 defaults:
