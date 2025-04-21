@@ -39,7 +39,7 @@ jobs:
 
       - name: Install python requirements
         run: |
-          python -m pip install uv rust-just build
+          python -m pip install uv rust-just build twine
 
       - name: Build Dist
         run: |
@@ -47,6 +47,7 @@ jobs:
 
       - name: Test SDist
         run: |
+          python -m twine check --strict dist/*.*
           python -m pip install dist/*.gz
           cd ..
           python -c "from flask_pymongo import PyMongo"
