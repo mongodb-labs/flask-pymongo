@@ -76,7 +76,7 @@ jobs:
         name: all-dist-${{ github.run_id }}
         path: dist/
     - name: Publish distribution 📦 to PyPI
-      if: startsWith(github.ref, 'refs/tags/')
+      if: startsWith(env.DRY_RUN, 'false')
       uses: pypa/gh-action-pypi-publish@release/v1
 
   post-publish:
