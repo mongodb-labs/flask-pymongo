@@ -77,7 +77,7 @@ jobs:
         path: dist/
     - name: Publish distribution 📦 to PyPI
       if: startsWith(env.DRY_RUN, 'false')
-      uses: pypa/gh-action-pypi-publish@release/v1
+      uses: pypa/gh-action-pypi-publish@76f52bc884231f62b9a034ebfe128415bbaabdfc # release/v1
 
   post-publish:
     needs: [publish]
