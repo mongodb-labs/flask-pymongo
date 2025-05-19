@@ -4,7 +4,7 @@
 
 - TDB
 
-## 3.0.1 Jan 29, 2005
+## 3.0.1 Jan 29, 2025
 
 - Fix inclusion of `_version.py` file.
 
