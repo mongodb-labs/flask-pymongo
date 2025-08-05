@@ -1,8 +1,8 @@
-name: GitHub Actions Security Analysis with zizmor
+name: GitHub Actions Security Analysis with zizmor 🌈
 
 on:
   push:
-    branches: ["main"]
+    branches: ["master"]
   pull_request:
     branches: ["**"]
 
@@ -17,16 +17,5 @@ jobs:
         uses: actions/checkout@v4
         with:
           persist-credentials: false
-      - name: Setup Rust
-        uses: actions-rust-lang/setup-rust-toolchain@fb51252c7ba57d633bc668f941da052e410add48 # v1
-      - name: Get zizmor
-        run: cargo install zizmor
-      - name: Run zizmor
-        run: zizmor --format sarif . > results.sarif
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Upload SARIF file
-        uses: github/codeql-action/upload-sarif@d6bbdef45e766d081b84a2def353b0055f728d3e # v3
-        with:
-          sarif_file: results.sarif
-          category: zizmor
+      - name: Run zizmor 🌈
+        uses: zizmorcore/zizmor-action@87e33752ad17c7c7fc16fe27c858900c59b18d77
