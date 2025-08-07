@@ -15,7 +15,7 @@ defaults:
 
 env:
   MIN_PYTHON: "3.9"
-  MIN_MONGODB: "4.0"
+  MIN_MONGODB: "4.2"
   MAX_MONGODB: "8.0"
 
 jobs:
