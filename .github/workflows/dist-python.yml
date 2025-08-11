@@ -28,7 +28,7 @@ jobs:
     name: Make Dist
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           persist-credentials: false
 
@@ -63,7 +63,7 @@ jobs:
     name: Download Dist
     steps:
       - name: Download all workflow run artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
       - name: Flatten directory
         working-directory: .
         run: |
