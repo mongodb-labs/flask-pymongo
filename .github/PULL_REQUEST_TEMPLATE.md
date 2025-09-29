@@ -1,4 +1,4 @@
-[Issue Key](https://jira.mongodb.org/browse/{ISSUE_KEY})
+[Issue Key](https://jira.mongodb.org/browse/%7BISSUE_KEY%7D)
 
 ## Summary
 
