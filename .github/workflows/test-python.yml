@@ -27,7 +27,7 @@ jobs:
         persist-credentials: false
         fetch-depth: 0
     - name: Install uv
-      uses: astral-sh/setup-uv@85856786d1ce8acfbcc2f13a5f3fbd6b938f9f41 # v7
+      uses: astral-sh/setup-uv@5a7eac68fb9809dea845d802897dc5c723910fa3 # v7
       with:
         enable-cache: true
         python-version: ${{ matrix.python-version }}
@@ -50,14 +50,14 @@ jobs:
           persist-credentials: false
           fetch-depth: 0
       - name: Install uv
-        uses: astral-sh/setup-uv@85856786d1ce8acfbcc2f13a5f3fbd6b938f9f41 # v7
+        uses: astral-sh/setup-uv@5a7eac68fb9809dea845d802897dc5c723910fa3 # v7
         with:
           enable-cache: true
           python-version: ${{ matrix.python-version }}
       - uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3
       - name: Start MongoDB on Linux
         if: ${{ startsWith(runner.os, 'Linux') }}
-        uses: supercharge/mongodb-github-action@90004df786821b6308fb02299e5835d0dae05d0d # 1.12.0
+        uses: supercharge/mongodb-github-action@315db7fe45ac2880b7758f1933e6e5d59afd5e94 # 1.12.1
         with:
           mongodb-version: ${{ env.MAX_MONGODB }}
           mongodb-replica-set: test-rs
@@ -86,18 +86,18 @@ jobs:
         persist-credentials: false
         fetch-depth: 0
     - name: Install uv
-      uses: astral-sh/setup-uv@85856786d1ce8acfbcc2f13a5f3fbd6b938f9f41 # v7
+      uses: astral-sh/setup-uv@5a7eac68fb9809dea845d802897dc5c723910fa3 # v7
       with:
         enable-cache: true
         python-version: ${{ env.MIN_PYTHON }}
     - uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3
     - name: Install uv
-      uses: astral-sh/setup-uv@85856786d1ce8acfbcc2f13a5f3fbd6b938f9f41 # v7
+      uses: astral-sh/setup-uv@5a7eac68fb9809dea845d802897dc5c723910fa3 # v7
       with:
         enable-cache: true
         python-version: ${{ env.MIN_PYTHON }}
     - uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3
-    - uses: supercharge/mongodb-github-action@90004df786821b6308fb02299e5835d0dae05d0d # 1.12.0
+    - uses: supercharge/mongodb-github-action@315db7fe45ac2880b7758f1933e6e5d59afd5e94 # 1.12.1
       with:
         mongodb-version: ${{ env.MIN_MONGODB }}
         mongodb-replica-set: test-rs
