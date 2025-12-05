@@ -7,7 +7,7 @@ If you are an external contributor and there is no JIRA ticket associated with y
 for the PR title. A MongoDB employee will create a JIRA ticket and edit the name and links as appropriate.
 -->
 
-[JIRA TICKET](https://jira.mongodb.org/browse/%7BJIRA_TICKET%7D)
+JIRA TICKET
 
 ## Changes in this PR
 
