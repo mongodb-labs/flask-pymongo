@@ -52,7 +52,7 @@ jobs:
           cd ..
           python -c "from flask_pymongo import PyMongo"
 
-      - uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@v6
         with:
           name: "dist"
           path: ./dist/*.*
@@ -63,13 +63,13 @@ jobs:
     name: Download Dist
     steps:
       - name: Download all workflow run artifacts
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v7
       - name: Flatten directory
         working-directory: .
         run: |
           find . -mindepth 2 -type f -exec mv {} . \;
           find . -type d -empty -delete
-      - uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@v6
         with:
           name: all-dist-${{ github.run_id }}
           path: "./*"
