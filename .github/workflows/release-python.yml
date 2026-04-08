@@ -70,13 +70,13 @@ jobs:
       id-token: write
     steps:
     - name: Download all the dists
-      uses: actions/download-artifact@v7
+      uses: actions/download-artifact@v8
       with:
         name: all-dist-${{ github.run_id }}
         path: dist/
     - name: Publish distribution 📦 to PyPI
       if: startsWith(env.DRY_RUN, 'false')
-      uses: pypa/gh-action-pypi-publish@ed0c53931b1dc9bd32cbe73a98c7f6766f8a527e # release/v1
+      uses: pypa/gh-action-pypi-publish@cef221092ed1bacb1cc03d23a2d87d1d172e277b # release/v1
 
   post-publish:
     needs: [publish]
