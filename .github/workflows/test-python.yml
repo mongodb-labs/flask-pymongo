@@ -55,26 +55,10 @@ jobs:
           enable-cache: true
           python-version: ${{ matrix.python-version }}
       - uses: extractions/setup-just@53165ef7e734c5c07cb06b3c8e7b647c5aa16db3 # v3
-      - name: Start MongoDB on Linux
-        if: ${{ startsWith(runner.os, 'Linux') }}
-        uses: supercharge/mongodb-github-action@315db7fe45ac2880b7758f1933e6e5d59afd5e94 # 1.12.1
+      - name: Start MongoDB
+        uses: mongodb-labs/drivers-evergreen-tools@ea6e66ae7e2670f1e54a6998dff9cfd30cd1b1de # master
         with:
-          mongodb-version: ${{ env.MAX_MONGODB }}
-          mongodb-replica-set: test-rs
-      - name: Start MongoDB on MacOS
-        if: ${{ startsWith(runner.os, 'macOS') }}
-        run: |
-          brew tap mongodb/brew
-          brew install mongodb/brew/mongodb-community@${MAX_MONGODB}
-          brew services start mongodb-community@${MAX_MONGODB}
-      - name: Start MongoDB on Windows
-        if: ${{ startsWith(runner.os, 'Windows') }}
-        shell: powershell
-        run: |
-          mkdir data
-          mongod --remove
-          mongod --install --dbpath=$(pwd)/data --logpath=$PWD/mongo.log
-          net start MongoDB
+          version: ${{ env.MAX_MONGODB }}
       - run: just install
       - run: just test
 
@@ -91,16 +75,10 @@ jobs:
         enable-cache: true
         python-version: ${{ env.MIN_PYTHON }}
     - uses: extractions/setup-just@53165ef7e734c5c07cb06b3c8e7b647c5aa16db3 # v3
-    - name: Install uv
-      uses: astral-sh/setup-uv@cec208311dfd045dd5311c1add060b2062131d57 # v7
+    - name: Start MongoDB
+      uses: mongodb-labs/drivers-evergreen-tools@ea6e66ae7e2670f1e54a6998dff9cfd30cd1b1de # master
       with:
-        enable-cache: true
-        python-version: ${{ env.MIN_PYTHON }}
-    - uses: extractions/setup-just@53165ef7e734c5c07cb06b3c8e7b647c5aa16db3 # v3
-    - uses: supercharge/mongodb-github-action@315db7fe45ac2880b7758f1933e6e5d59afd5e94 # 1.12.1
-      with:
-        mongodb-version: ${{ env.MIN_MONGODB }}
-        mongodb-replica-set: test-rs
+        version: ${{ env.MIN_MONGODB }}
     - name: Run unit tests with minimum dependency versions
       run: |
         uv sync --python=${MIN_PYTHON} --resolution=lowest-direct
