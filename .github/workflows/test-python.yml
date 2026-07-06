@@ -76,9 +76,13 @@ jobs:
         python-version: ${{ env.MIN_PYTHON }}
     - uses: extractions/setup-just@53165ef7e734c5c07cb06b3c8e7b647c5aa16db3 # v3
     - name: Start MongoDB
-      uses: mongodb-labs/drivers-evergreen-tools@ea6e66ae7e2670f1e54a6998dff9cfd30cd1b1de # master
+      # drivers-evergreen-tools downloads a native binary matched to the runner's
+      # Ubuntu release, but MongoDB 4.2 has no published archive newer than
+      # ubuntu1804, which GitHub no longer hosts. supercharge runs MongoDB via
+      # Docker instead, so it isn't tied to the runner's OS version.
+      uses: supercharge/mongodb-github-action@315db7fe45ac2880b7758f1933e6e5d59afd5e94 # 1.12.1
       with:
-        version: ${{ env.MIN_MONGODB }}
+        mongodb-version: ${{ env.MIN_MONGODB }}
     - name: Run unit tests with minimum dependency versions
       run: |
         uv sync --python=${MIN_PYTHON} --resolution=lowest-direct
