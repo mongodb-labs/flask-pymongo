@@ -22,12 +22,12 @@ jobs:
   static:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
       with:
         persist-credentials: false
         fetch-depth: 0
     - name: Install uv
-      uses: astral-sh/setup-uv@cec208311dfd045dd5311c1add060b2062131d57 # v7
+      uses: astral-sh/setup-uv@fac544c07dec837d0ccb6301d7b5580bf5edae39 # v7
       with:
         enable-cache: true
         python-version: ${{ matrix.python-version }}
@@ -45,12 +45,12 @@ jobs:
       fail-fast: false
     name: CPython ${{ matrix.python-version }}-${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           persist-credentials: false
           fetch-depth: 0
       - name: Install uv
-        uses: astral-sh/setup-uv@cec208311dfd045dd5311c1add060b2062131d57 # v7
+        uses: astral-sh/setup-uv@fac544c07dec837d0ccb6301d7b5580bf5edae39 # v7
         with:
           enable-cache: true
           python-version: ${{ matrix.python-version }}
@@ -65,12 +65,12 @@ jobs:
   build-min:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
       with:
         persist-credentials: false
         fetch-depth: 0
     - name: Install uv
-      uses: astral-sh/setup-uv@cec208311dfd045dd5311c1add060b2062131d57 # v7
+      uses: astral-sh/setup-uv@fac544c07dec837d0ccb6301d7b5580bf5edae39 # v7
       with:
         enable-cache: true
         python-version: ${{ env.MIN_PYTHON }}
