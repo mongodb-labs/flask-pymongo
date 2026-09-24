@@ -40,16 +40,16 @@ jobs:
     outputs:
       version: ${{ steps.pre-publish.outputs.version }}
     steps:
-      - uses: mongodb-labs/drivers-github-tools/secure-checkout@v3
+      - uses: mongodb-labs/drivers-github-tools/secure-checkout@4089c3eb27d7a5101d987088c3345013858d65f8  # v3.0.6
         with:
           app_id: ${{ vars.APP_ID }}
           private_key: ${{ secrets.APP_PRIVATE_KEY }}
-      - uses: mongodb-labs/drivers-github-tools/setup@v3
+      - uses: mongodb-labs/drivers-github-tools/setup@4089c3eb27d7a5101d987088c3345013858d65f8  # v3.0.6
         with:
           aws_role_arn: ${{ secrets.AWS_ROLE_ARN }}
           aws_region_name: ${{ vars.AWS_REGION_NAME }}
           aws_secret_id: ${{ secrets.AWS_SECRET_ID }}
-      - uses: mongodb-labs/drivers-github-tools/python-labs/pre-publish@v3
+      - uses: mongodb-labs/drivers-github-tools/python-labs/pre-publish@4089c3eb27d7a5101d987088c3345013858d65f8  # v3.0.6
         id: pre-publish
         with:
           dry_run: ${{ env.DRY_RUN }}
@@ -88,16 +88,16 @@ jobs:
       attestations: write
       security-events: write
     steps:
-      - uses: mongodb-labs/drivers-github-tools/secure-checkout@v3
+      - uses: mongodb-labs/drivers-github-tools/secure-checkout@4089c3eb27d7a5101d987088c3345013858d65f8  # v3.0.6
         with:
           app_id: ${{ vars.APP_ID }}
           private_key: ${{ secrets.APP_PRIVATE_KEY }}
-      - uses: mongodb-labs/drivers-github-tools/setup@v3
+      - uses: mongodb-labs/drivers-github-tools/setup@4089c3eb27d7a5101d987088c3345013858d65f8  # v3.0.6
         with:
           aws_role_arn: ${{ secrets.AWS_ROLE_ARN }}
           aws_region_name: ${{ vars.AWS_REGION_NAME }}
           aws_secret_id: ${{ secrets.AWS_SECRET_ID }}
-      - uses: mongodb-labs/drivers-github-tools/python-labs/post-publish@v3
+      - uses: mongodb-labs/drivers-github-tools/python-labs/post-publish@4089c3eb27d7a5101d987088c3345013858d65f8  # v3.0.6
         with:
           following_version: ${{ env.FOLLOWING_VERSION }}
           product_name: ${{ env.PRODUCT_NAME }}
