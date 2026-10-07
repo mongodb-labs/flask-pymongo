@@ -27,7 +27,7 @@ jobs:
         persist-credentials: false
         fetch-depth: 0
     - name: Install uv
-      uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+      uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
       with:
         enable-cache: true
         python-version: ${{ matrix.python-version }}
@@ -50,13 +50,13 @@ jobs:
           persist-credentials: false
           fetch-depth: 0
       - name: Install uv
-        uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+        uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
         with:
           enable-cache: true
           python-version: ${{ matrix.python-version }}
       - uses: extractions/setup-just@53165ef7e734c5c07cb06b3c8e7b647c5aa16db3 # v3
       - name: Start MongoDB
-        uses: mongodb-labs/drivers-evergreen-tools@4c63815912cb0a4ff7bc877c173d0deab39690c5 # master
+        uses: mongodb-labs/drivers-evergreen-tools@982dcb06ff4af47a025d565aa57f654f9e8df81f # master
         with:
           version: ${{ env.MAX_MONGODB }}
       - run: just install
@@ -70,7 +70,7 @@ jobs:
         persist-credentials: false
         fetch-depth: 0
     - name: Install uv
-      uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+      uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
       with:
         enable-cache: true
         python-version: ${{ env.MIN_PYTHON }}
