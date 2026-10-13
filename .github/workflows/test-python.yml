@@ -84,6 +84,12 @@ jobs:
       with:
         mongodb-version: ${{ env.MIN_MONGODB }}
     - name: Run unit tests with minimum dependency versions
+      # `just test` runs `uv run`, which re-resolves to the highest versions by
+      # default and would undo the lowest-direct install below (pulling in a
+      # PyMongo that requires a newer MongoDB than MIN_MONGODB). Pin the
+      # resolution strategy for the whole step.
+      env:
+        UV_RESOLUTION: lowest-direct
       run: |
-        uv sync --python=${MIN_PYTHON} --resolution=lowest-direct
+        uv sync --python=${MIN_PYTHON}
         just test
