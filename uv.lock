@@ -189,7 +189,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "flask", specifier = ">=3.0" },
-    { name = "pymongo", specifier = ">=4.0" },
+    { name = "pymongo", specifier = ">=4.9" },
 ]
 
 [package.metadata.requires-dev]
