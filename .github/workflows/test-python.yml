@@ -56,7 +56,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - uses: extractions/setup-just@53165ef7e734c5c07cb06b3c8e7b647c5aa16db3 # v3
       - name: Start MongoDB
-        uses: mongodb-labs/drivers-evergreen-tools@982dcb06ff4af47a025d565aa57f654f9e8df81f # master
+        uses: mongodb-labs/drivers-evergreen-tools@a6b85438215409cb458f68bc3772b9d255c76342 # master
         with:
           version: ${{ env.MAX_MONGODB }}
       - run: just install
