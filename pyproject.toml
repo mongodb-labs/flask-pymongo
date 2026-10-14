@@ -8,7 +8,7 @@ dynamic = ["version"]
 description = "PyMongo support for Flask applications"
 readme = "README.md"
 license = { file="LICENSE" }
-requires-python = ">=3.9"
+requires-python = ">=3.11"
 authors = [
     { name = "Dan Crosta", email = "dcrosta@late.am" },
 ]
@@ -19,9 +19,6 @@ classifiers = [
     "License :: OSI Approved :: BSD License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: Implementation :: CPython",
-    "Programming Language :: Python :: Implementation :: PyPy",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
@@ -31,7 +28,7 @@ classifiers = [
 ]
 dependencies = [
     "Flask>=3.0",
-    "PyMongo>=4.0",
+    "PyMongo>=4.9",
 ]
 
 [project.urls]
@@ -66,7 +63,7 @@ testpaths = [
 ]
 
 [tool.mypy]
-python_version = "3.9"
+python_version = "3.11"
 strict = true
 enable_error_code = ["ignore-without-code", "redundant-expr", "truthy-bool"]
 

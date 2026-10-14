@@ -2,7 +2,8 @@
 
 ## 3.1.0: Unreleased
 
-- TDB
+- Dropped support for Python 3.9 and 3.10.
+- Raised the minimum supported PyMongo version to 4.9.
 
 ## 3.0.1 Jan 29, 2025
 

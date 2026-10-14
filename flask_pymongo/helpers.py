@@ -37,14 +37,6 @@ from flask.json.provider import JSONProvider
 from werkzeug.routing import BaseConverter
 
 
-def _iteritems(obj: Any) -> Any:
-    if hasattr(obj, "iteritems"):
-        return obj.iteritems()
-    if hasattr(obj, "items"):
-        return obj.items()
-    raise TypeError(f"{obj!r} missing iteritems() and items()")
-
-
 class BSONObjectIdConverter(BaseConverter):
     """A simple converter for the RESTful URL routing system of Flask.
 

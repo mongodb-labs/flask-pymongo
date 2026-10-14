@@ -63,9 +63,8 @@ not be accepted, and future changes may break compatibility in older
 versions.
 
 Flask-PyMongo is tested against `supported versions
-<https://www.mongodb.com/support-policy>`_ of MongoDB, and Python
-and 3.9+. For the exact list of version combinations that are tested and
-known to be compatible.
+<https://www.mongodb.com/support-policy>`_ of MongoDB and Python
+3.11+.
 
 
 Helpers
