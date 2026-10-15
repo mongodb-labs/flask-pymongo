@@ -41,6 +41,11 @@ jobs:
         run: |
           python -m pip install uv rust-just build twine
 
+      - name: Validate pyproject.toml
+        run: |
+          python -m pip install 'validate-pyproject[all]'
+          validate-pyproject pyproject.toml
+
       - name: Build Dist
         run: |
           python -m build .
