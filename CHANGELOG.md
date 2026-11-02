@@ -2,6 +2,7 @@
 
 ## 3.1.0: Unreleased
 
+- Add support for Python 3.15.
 - Dropped support for Python 3.9 and 3.10.
 - Raised the minimum supported PyMongo version to 4.9.
 
